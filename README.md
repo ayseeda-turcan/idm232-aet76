@@ -1,5 +1,5 @@
 # idm232-aet76
-An online cookbook featuring a library of recipes.# 🍳 My Recipe Website
+An online cookbook featuring a library of recipes.
 
 ## Overview
 This is a custom PHP-based online cookbook that allows users to browse, search, and view recipes with ingredients, instructions, and images.  
