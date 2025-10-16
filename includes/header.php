@@ -8,10 +8,15 @@
 </head>
 <body>
     <header>
-        <h1>ChicChow</h1>
-        <nav>
-            <a href="index.php">Home</a>
-            <a href="search.php">Search</a>
-            <a href="help.php">Help</a>
-        </nav>
+        <div class="navbar">
+            <div class="logo">
+                <h1><a href="index.php">ChicChow</a></h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.php">Home</a></li>
+                    <li><a href="help.php">Help</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>

@@ -23,7 +23,7 @@ foreach ($recipes as $recipe) {
     />
 
     <?php
-        $imagePath = 'assets/images/' . $current['image']; // adapt to your variables
+        $imagePath = 'assets/images/' . $current['image']; 
         echo "<p>Image URL: $imagePath</p>";
         echo "<p>File exists? " . (file_exists($imagePath) ? 'YES' : 'NO') . "</p>";
     ?>
