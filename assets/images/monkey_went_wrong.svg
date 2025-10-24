@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280.52 84.07">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #dda15e;
+      }
+
+      .cls-2 {
+        fill: #ffa8a8;
+      }
+
+      .cls-3 {
+        fill: #bc6c25;
+      }
+
+      .cls-4 {
+        fill: #ffcec8;
+      }
+
+      .cls-5 {
+        fill: #606c38;
+        font-family: TrebuchetMS-Italic, 'Trebuchet MS';
+        font-size: 15px;
+        font-style: italic;
+      }
+
+      .cls-6 {
+        letter-spacing: -.13em;
+      }
+    </style>
+  </defs>
+  <rect class="cls-3" x="254.75" y="24.9" width="8.14" height="59.17" rx="4.07" ry="4.07"/>
+  <rect class="cls-2" x="238.22" y="75.63" width="31.3" height="8.44" rx="4.22" ry="4.22"/>
+  <path class="cls-3" d="M251.17,29.37h7.65v17.62c0,13.48-10.95,24.43-24.43,24.43h-15.65v-9.62c0-17.9,14.53-32.43,32.43-32.43Z"/>
+  <rect class="cls-4" x="228.93" y="75.63" width="30.96" height="8.44" rx="4.22" ry="4.22"/>
+  <path class="cls-3" d="M230.22,84.07H5.89C2.64,84.07,0,82.11,0,79.7s2.64-4.37,5.89-4.37h224.33c3.25,0,5.89,1.96,5.89,4.37s-2.64,4.37-5.89,4.37Z"/>
+  <ellipse class="cls-1" cx="232.37" cy="69.15" rx="14.24" ry="14.92"/>
+  <rect class="cls-3" x="227.32" y="0" width="50.19" height="32.56" rx="16.28" ry="16.28"/>
+  <circle class="cls-4" cx="228.02" cy="17.63" r="7.13"/>
+  <rect class="cls-4" x="241.18" y="5.43" width="35.27" height="27.13" rx="10.94" ry="10.94"/>
+  <circle class="cls-2" cx="254.33" cy="14.24" r="2.03"/>
+  <circle class="cls-2" cx="270.68" cy="14.24" r="2.03"/>
+  <rect class="cls-2" x="254.75" y="17.63" width="25.77" height="14.92" rx="7.17" ry="7.17"/>
+  <circle class="cls-2" cx="228.02" cy="17.63" r="4.99"/>
+  <text class="cls-5" transform="translate(11.98 36.32) scale(.93 1)"><tspan x="0" y="0">Whoops, something went wrong!</tspan><tspan x="0" y="18">Please try again late</tspan><tspan class="cls-6" x="139.65" y="18">r</tspan><tspan x="143.93" y="18">.</tspan></text>
+</svg>

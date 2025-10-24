@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ChicChow</title>
+    <title>ChimpChow</title>
     <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
     <header>
         <div class="navbar">
             <div class="logo">
-                <h1><a href="index.php">ChicChow</a></h1>
+                <a href="index.php"><img src="assets/images/monkey_logo.svg" alt="Logo Of ChimpChow"></a>
             </div>
             <nav>
                 <ul>

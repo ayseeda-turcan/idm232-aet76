@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 210.47 35.69">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #dda15e;
+      }
+
+      .cls-2 {
+        fill: #ffa8a8;
+      }
+
+      .cls-3 {
+        fill: #bc6c25;
+      }
+
+      .cls-4 {
+        fill: #ffcec8;
+      }
+
+      .cls-5 {
+        fill: #606c38;
+        font-family: Trebuchet-BoldItalic, 'Trebuchet MS';
+        font-size: 34px;
+        font-style: italic;
+        font-weight: 700;
+      }
+    </style>
+  </defs>
+  <rect class="cls-3" x="200.64" y="9.49" width="3.1" height="22.56" rx="1.55" ry="1.55"/>
+  <rect class="cls-2" x="194.34" y="28.83" width="11.93" height="3.22" rx="1.61" ry="1.61"/>
+  <path class="cls-3" d="M199.28,11.2h2.92v6.72c0,5.14-4.17,9.31-9.31,9.31h-5.97v-3.67c0-6.82,5.54-12.36,12.36-12.36Z"/>
+  <rect class="cls-4" x="180.18" y="28.83" width="22.43" height="3.22" rx="1.52" ry="1.52"/>
+  <rect class="cls-3" x="0" y="28.72" width="193.76" height="3.33" rx="1.62" ry="1.62"/>
+  <ellipse class="cls-1" cx="192.11" cy="26.36" rx="5.43" ry="5.69"/>
+  <rect class="cls-3" x="190.19" y="0" width="19.13" height="12.41" rx="6.21" ry="6.21"/>
+  <circle class="cls-4" cx="190.45" cy="6.72" r="2.72"/>
+  <rect class="cls-4" x="195.47" y="2.07" width="13.45" height="10.34" rx="4.17" ry="4.17"/>
+  <circle class="cls-2" cx="200.48" cy="5.43" r=".78"/>
+  <circle class="cls-2" cx="206.72" cy="5.43" r=".78"/>
+  <rect class="cls-2" x="200.64" y="6.72" width="9.83" height="5.69" rx="2.73" ry="2.73"/>
+  <circle class="cls-2" cx="190.45" cy="6.72" r="1.9"/>
+  <text class="cls-5" transform="translate(3.5 28.72)"><tspan x="0" y="0">ChimpChow</tspan></text>
+</svg>
