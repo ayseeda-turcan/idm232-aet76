@@ -21,8 +21,8 @@ The site is fully responsive and designed with an accessible, user-friendly layo
 ## Technology Stack
 - **Frontend:** HTML5, CSS
 - **Backend:** PHP
-- **Database:** MySQL (for Beta)
+- **Database:** MySQL (for future Beta updates)
 - **Version Control:** Git + GitHub
-- **Hosting:** (e.g., InfinityFree / Localhost / 000Webhost)
+- **Hosting:** DIGM Hosting
 
 ---
