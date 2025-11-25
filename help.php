@@ -1,5 +1,4 @@
 <?php include 'includes/header.php'; ?>
-<?php include 'includes/mock-data.php'; ?>
 
 <section class="help">
     <a href="assets/images/alpha_materials.pdf" target="_blank"><button>Design Tile & Wireframes</button></a>
