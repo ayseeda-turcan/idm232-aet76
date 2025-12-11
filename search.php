@@ -10,8 +10,8 @@ $category = isset($_GET['category']) ? $_GET['category'] : '';
 $difficulty = isset($_GET['difficulty']) ? $_GET['difficulty'] : '';
 $max_cook_time = isset($_GET['cook_time']) ? intval($_GET['cook_time']) : 0;
 
-// BASE SQL
-$sql = "SELECT r.recipe_id, r.recipe_name, r.recipe_name_pt2, r.description, r.category, r.difficulty, r.cook_time, 
+// BASE SQL - ADDED DISTINCT TO GET RID OF DOUBLES
+$sql = "SELECT DISTINCT r.recipe_id, r.recipe_name, r.recipe_name_pt2, r.description, r.category, r.difficulty, r.cook_time, 
         i.file_path AS hero_image
         FROM idm232_recipes_cleaned r
         LEFT JOIN recipe_images i ON i.recipe_id = r.recipe_id AND i.type = 'hero'
@@ -22,12 +22,14 @@ $types = "";
 
 // SEARCH FILTER
 if (!empty($search)) {
-    $sql .= " AND (r.recipe_name LIKE ? OR r.recipe_name_pt2 LIKE ? OR r.description LIKE ?)";
+    $sql .= " AND (r.recipe_name LIKE ? OR r.recipe_name_pt2 LIKE ? OR r.description LIKE ? OR r.ingredients LIKE ? OR r.category LIKE ?)";
     $searchParam = "%$search%";
     $params[] = $searchParam;
     $params[] = $searchParam;
     $params[] = $searchParam;
-    $types .= "sss";
+    $params[] = $searchParam;
+    $params[] = $searchParam;
+    $types .= "sssss";
 }
 
 // CATEGORY FILTER
@@ -66,7 +68,6 @@ $categoriesQuery = "SELECT DISTINCT category FROM idm232_recipes_cleaned WHERE c
 $categories = $conn->query($categoriesQuery);
 ?>
 
-<main style="flex: 1;">
 <section class="search-results-page">
     <section class="intro">
         <h1>Our Recipes</h1>
@@ -122,26 +123,43 @@ $categories = $conn->query($categoriesQuery);
         <div class="recipe-grid">
             <?php while($recipe = $result->fetch_assoc()): ?>
                 <article class="recipe-card">
-                    <a href="recipe.php?id=<?php echo $recipe['recipe_id']; ?>">
-                        <img src="<?php echo htmlspecialchars($recipe['hero_image']); ?>" alt="<?php echo htmlspecialchars($recipe['recipe_name']); ?>">
+                    <a href="recipe.php?id=<?= $recipe['recipe_id']; ?>">
+                        <?php if (!empty($recipe['hero_image'])): ?>
+                            <img src="<?= htmlspecialchars($recipe['hero_image'], ENT_QUOTES); ?>" alt="<?= htmlspecialchars($recipe['recipe_name'] ?? 'Recipe Image', ENT_QUOTES); ?>">
+                        <?php else: ?>
+                            <img src="assets/images/placeholder.png" alt="Placeholder Image">
+                        <?php endif; ?>
+
                         <div class="recipe-card-content">
-                            <h2><?php echo htmlspecialchars($recipe['recipe_name']); ?></h2>
+                            <h2><?= htmlspecialchars($recipe['recipe_name'] ?? '', ENT_QUOTES); ?></h2>
                             <?php if (!empty($recipe['recipe_name_pt2'])): ?>
-                                <h3><?php echo htmlspecialchars($recipe['recipe_name_pt2']); ?></h3>
+                                <h3><?= htmlspecialchars($recipe['recipe_name_pt2'], ENT_QUOTES); ?></h3>
                             <?php endif; ?>
-                            <p class="recipe-excerpt"><?php echo htmlspecialchars(substr($recipe['description'], 0, 100)) . '...'; ?></p>
+
+                            <p class="preview-text"><?= htmlspecialchars(substr($recipe['description'] ?? '', 0, 100), ENT_QUOTES) . '...'; ?></p>
                         </div>
                     </a>
+
+                    <div class="recipe-meta">
+                        <?php if (!empty($recipe['category'])): ?>
+                            <span class="category"><?= htmlspecialchars($recipe['category'], ENT_QUOTES); ?></span>
+                        <?php endif; ?>
+                        <?php if (!empty($recipe['difficulty'])): ?>
+                            <span class="difficulty"><?= htmlspecialchars(ucfirst($recipe['difficulty']), ENT_QUOTES); ?></span>
+                        <?php endif; ?>
+                        <?php if (!empty($recipe['cook_time'])): ?>
+                            <span class="cook-time"><?= htmlspecialchars($recipe['cook_time'], ENT_QUOTES); ?> min</span>
+                        <?php endif; ?>
+                    </div>
                 </article>
             <?php endwhile; ?>
         </div>
     <?php else: ?>
-        <div class="logo">
-            <img src="assets/images/monkey_went_wrong.svg" alt="No results found">
+        <div class="no-recipe">
+            <img src="assets/images/monkey_went_wrong.png" alt="No results found">
         </div>
     <?php endif; ?>
 </section>
-</main>
 
 <?php 
 include 'includes/footer.php';

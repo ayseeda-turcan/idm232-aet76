@@ -59,44 +59,39 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 ?>
 
-<main class="help">
+<main class="login-signup">
     <h1>Create Your ChimpChow Account</h1>
     
     <?php if ($error): ?>
-        <p style="color: #d76500; text-align: center; padding: 1rem; background-color: #fef3e8; border-radius: 10px;">
+        <p class="login-error">
             <?php echo htmlspecialchars($error); ?>
         </p>
     <?php endif; ?>
     
     <?php if ($success): ?>
-        <p style="color: #606C38; text-align: center; padding: 1rem; background-color: #e8f3e8; border-radius: 10px;">
+        <p class="register-success">
             <?php echo htmlspecialchars($success); ?>
         </p>
     <?php endif; ?>
     
-    <form action="register.php" method="POST" style="max-width: 400px; margin: 2rem auto;">
-        <input type="text" name="first_name" placeholder="First Name *" required 
-            style="width: 100%; padding: 0.8rem; margin-bottom: 1rem; border-radius: 20px; border: 1px solid #ccc; font-size: 1rem;">
+    <form action="register.php" method="POST">
+        <input type="text" name="first_name" placeholder="First Name *" required>
         
-        <input type="text" name="last_name" placeholder="Last Name (Optional)" 
-            style="width: 100%; padding: 0.8rem; margin-bottom: 1rem; border-radius: 20px; border: 1px solid #ccc; font-size: 1rem;">
+        <input type="text" name="last_name" placeholder="Last Name (Optional)">
         
-        <input type="email" name="email" placeholder="Email *" required 
-            style="width: 100%; padding: 0.8rem; margin-bottom: 1rem; border-radius: 20px; border: 1px solid #ccc; font-size: 1rem;">
-        
-        <input type="password" name="password" placeholder="Password (min 6 characters) *" required 
-            style="width: 100%; padding: 0.8rem; margin-bottom: 1rem; border-radius: 20px; border: 1px solid #ccc; font-size: 1rem;">
-        
-        <input type="password" name="confirm_password" placeholder="Confirm Password *" required 
-            style="width: 100%; padding: 0.8rem; margin-bottom: 1.5rem; border-radius: 20px; border: 1px solid #ccc; font-size: 1rem;">
-        
-        <button type="submit" style="width: 100%; background-color: var(--button-color); color: var(--background-color); border: none; border-radius: 20px; padding: 0.8rem; font-size: 1rem; cursor: pointer; font-weight: 500;">
+        <input type="email" name="email" placeholder="Email *" required>
+
+        <input type="password" name="password" placeholder="Password (min 6 characters) *" required>
+
+        <input type="password" name="confirm_password" placeholder="Confirm Password *" required> 
+
+        <button type="submit">
             Sign Up
         </button>
     </form>
     
-    <p style="text-align: center; margin-top: 1.5rem; font-size: 1rem;">
-        Already have an account? <a href="login.php" style="color: #d76500; text-decoration: none; font-weight: 500;">Log in here</a>
+    <p class="login-message-text">
+        Already have an account? <a href="login.php" class="login-message-link">Log in here</a>
     </p>
 </main>
 

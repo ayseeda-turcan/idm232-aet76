@@ -126,10 +126,11 @@ $ingredients_list = array_filter(array_map('trim', explode("\n", $recipe['ingred
                         </div>
                         <?php if (isset($images['steps'][$idx])): ?>
                             <img class="step-image" 
-                                 src="<?php echo htmlspecialchars($images['steps'][$idx]); ?>" 
-                                 alt="Step <?php echo $idx + 1; ?> image">
+                                src="<?php echo htmlspecialchars($images['steps'][$idx]); ?>" 
+                                alt="Step <?php echo $idx + 1; ?> image">
                         <?php endif; ?>
                     </li>
+                    <hr>
                 <?php endforeach; ?>
             </ol>
         </section>

@@ -2,6 +2,8 @@
 
 <section class="help">
     <a href="assets/images/alpha_materials.pdf" target="_blank"><button>Design Tile & Wireframes</button></a>
+    <a href="casestudy.php" target="_blank"><button>Case Study</button></a>
+
 
     <h1>Need a Hand?</h1>
 

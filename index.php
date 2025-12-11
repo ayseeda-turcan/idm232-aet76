@@ -33,10 +33,10 @@ $result = $conn->query($sql);
                         <img src="<?php echo htmlspecialchars($recipe['hero_image'] ?? 'assets/images/placeholder.png'); ?>" 
                              alt="<?php echo htmlspecialchars($recipe['recipe_name']); ?>">
                         <h2><?= htmlspecialchars($recipe['recipe_name']) ?></h2>
+                        <h3><?= htmlspecialchars($recipe['recipe_name_pt2']) ?></h3>
+                        <p class="preview-text"><?= htmlspecialchars($recipe['description']) ?></p>
+                        <h4><a href="recipe.php?id=<?= $recipe['recipe_id'] ?>">Read More</a></h4>
                     </a>
-                    <h3><?= htmlspecialchars($recipe['recipe_name_pt2']) ?></h3>
-                    <p class="preview-text"><?= htmlspecialchars($recipe['description']) ?></p>
-                    <h4><a href="recipe.php?id=<?= $recipe['recipe_id'] ?>">Read More</a></h4>
                 </article>
             <?php endwhile; ?>
         <?php else: ?>

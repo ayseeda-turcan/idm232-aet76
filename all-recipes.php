@@ -4,17 +4,17 @@ include 'includes/header.php';
 
 $conn = getDBConnection();
 
-// FILTERS
+// GET FILTERS
 $search = isset($_GET['query']) ? trim($_GET['query']) : '';
 $category = isset($_GET['category']) ? $_GET['category'] : '';
 $difficulty = isset($_GET['difficulty']) ? $_GET['difficulty'] : '';
 $max_cook_time = isset($_GET['cook_time']) ? intval($_GET['cook_time']) : 0;
 
-$sql = "SELECT r.recipe_id, r.recipe_name, r.recipe_name_pt2, r.description, r.category, r.difficulty, r.cook_time,
+// BASE SQL - ADDED DISTINCT TO GET RID OF DOUBLES
+$sql = "SELECT DISTINCT r.recipe_id, r.recipe_name, r.recipe_name_pt2, r.description, r.category, r.difficulty, r.cook_time, 
         i.file_path AS hero_image
         FROM idm232_recipes_cleaned r
-        LEFT JOIN recipe_images i 
-            ON i.recipe_id = r.recipe_id AND i.type = 'hero'
+        LEFT JOIN recipe_images i ON i.recipe_id = r.recipe_id AND i.type = 'hero'
         WHERE 1=1";
 
 $params = [];
@@ -22,12 +22,14 @@ $types = "";
 
 // SEARCH FILTER
 if (!empty($search)) {
-    $sql .= " AND (r.recipe_name LIKE ? OR r.recipe_name_pt2 LIKE ? OR r.description LIKE ?)";
+    $sql .= " AND (r.recipe_name LIKE ? OR r.recipe_name_pt2 LIKE ? OR r.description LIKE ? OR r.ingredients LIKE ? OR r.category LIKE ?)";
     $searchParam = "%$search%";
     $params[] = $searchParam;
     $params[] = $searchParam;
     $params[] = $searchParam;
-    $types .= "sss";
+    $params[] = $searchParam;
+    $params[] = $searchParam;
+    $types .= "sssss";
 }
 
 // CATEGORY FILTER
@@ -77,7 +79,7 @@ $categories = $conn->query($categoriesQuery);
         <div class="search-container-inline">
             <form action="search.php" method="GET">
                 <input type="text" name="query" placeholder="Search recipes..." value="<?= htmlspecialchars($search, ENT_QUOTES); ?>"/>
-                <button type="submit">Search</button>
+                <button class="recipe-search-button" type="submit">Search</button>
             </form>
         </div>
 
@@ -153,8 +155,8 @@ $categories = $conn->query($categoriesQuery);
             <?php endwhile; ?>
         </div>
     <?php else: ?>
-        <div class="logo">
-            <img src="assets/images/monkey_went_wrong.svg" alt="No recipes found">
+        <div class="no-recipe">
+            <img src="assets/images/monkey_went_wrong.png" alt="No recipes found">
         </div>
     <?php endif; ?>
 </section>
